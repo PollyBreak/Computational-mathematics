@@ -11,7 +11,7 @@ public class BisectionMethod {
             double fa = f.apply(a);
             double fb = f.apply(b);
 
-            System.out.printf("Итерация %d: X = %.3f, a = %.3f, b = %.3f, f(X) = %.3f%n", iteration, c, a, b, fc);
+            System.out.printf("Iteration %d: X = %.3f, a = %.3f, b = %.3f, f(X) = %.3f%n", iteration, c, a, b, fc);
 
             if (fc == 0) {
                 return c;  // Найдено точное решение
@@ -24,7 +24,7 @@ public class BisectionMethod {
         }
 
         double finalX = (a + b) / 2;
-        System.out.printf("Итерация %d: X = %.3f, a = %.3f, b = %.3f%n", iteration, finalX, a, b);
+        System.out.printf("Iteration %d: X = %.3f, a = %.3f, b = %.3f%n", iteration, finalX, a, b);
         return finalX;
     }
 }
