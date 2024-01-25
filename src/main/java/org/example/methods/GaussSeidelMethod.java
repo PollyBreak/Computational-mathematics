@@ -22,7 +22,6 @@ public class GaussSeidelMethod {
             System.out.printf("Iteration %d: x1 = %.6f, x2 = %.6f, x3 = %.6f%n",
                     iteration + 1, solution[0], solution[1], solution[2]);
 
-            // Проверка на сходимость по норме
             double norm = calculateNorm(solution, oldSolution);
             if (norm < precision) {
                 System.out.println("Converged in " + (iteration + 1) + " iterations.");

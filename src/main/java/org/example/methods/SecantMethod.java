@@ -13,19 +13,16 @@ public class SecantMethod {
 
             x2 = x1 - f1 * (x1 - x0) / (f1 - f0);
 
-            //(x1 * f(x2) - x2 * f(x1)) / (f(x2) - f(x1));
             double f2=f.apply(x2);
             System.out.printf("Iteration %d: X = %.6f, f(X) = %.6f%n", iteration, x2, f2);
-
-            // Обновляем значения x0 и x1
             x0 = x1;
             x1 = x2;
 
             iteration++;
 
         } while (Math.abs(f.apply(x2)) > epsilon && iteration < maxIterations);
-
         return x2;
     }
-
 }
+
+

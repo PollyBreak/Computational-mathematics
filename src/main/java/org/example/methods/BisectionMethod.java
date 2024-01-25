@@ -12,9 +12,8 @@ public class BisectionMethod {
             double fb = f.apply(b);
 
             System.out.printf("Iteration %d: X = %.3f, a = %.3f, b = %.3f, f(X) = %.3f%n", iteration, c, a, b, fc);
-
             if (fc == 0) {
-                return c;  // Найдено точное решение
+                return c;
             } else if (fa * fc < 0) {
                 b = c;
             } else {
