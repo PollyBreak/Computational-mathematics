@@ -5,7 +5,6 @@ import org.mariuszgromada.math.mxparser.Expression;
 import org.mariuszgromada.math.mxparser.License;
 
 import java.util.Scanner;
-import java.util.function.Function;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,12 +29,13 @@ public class Main {
 //        double precision = scanner.nextDouble();
 //        System.out.println();
 
-        BisectionMethod bisectionMethod= new BisectionMethod();
-        FalsePositionMethod falsePositionMethod = new FalsePositionMethod();
-        SecantMethod secantMethod = new SecantMethod();
-        NewtonRaphsonMethod newtonRaphsonMethod = new NewtonRaphsonMethod();
-        GaussSeidelMethod gaussSeidelMethod = new GaussSeidelMethod();
-        JacobIterationMethod jacobIterationMethod = new JacobIterationMethod();
+//        BisectionMethod bisectionMethod= new BisectionMethod();
+//        FalsePositionMethod falsePositionMethod = new FalsePositionMethod();
+//        SecantMethod secantMethod = new SecantMethod();
+//        NewtonRaphsonMethod newtonRaphsonMethod = new NewtonRaphsonMethod();
+//        GaussSeidelMethod gaussSeidelMethod = new GaussSeidelMethod();
+//        JacobIterationMethod jacobIterationMethod = new JacobIterationMethod();
+          PowerMethod powerMethod = new PowerMethod();
 
 //        System.out.println("Bisection method \n");
 //        double solution1 = bisectionMethod.computeRoot(function, a, b, precision);
@@ -57,19 +57,40 @@ public class Main {
 //        System.out.printf("Approximate value of the root: %.3f%n", solution4);
 
 
-        double[][] coefficients = {
-                {10, -2, -1, -1},
-                {-2, 10, -1, -1},
-                {-1, -1, 10, -2},
-                {-1, -1, -2, 10}
-        };
-        double[] constants = {3, 15, 27, -9};
+//        double[][] coefficients = {
+//                {10, -2, -1, -1},
+//                {-2, 10, -1, -1},
+//                {-1, -1, 10, -2},
+//                {-1, -1, -2, 10}
+//        };
+//        double[] constants = {3, 15, 27, -9};
 //
 //        double[] solution = gaussSeidelMethod.computeRoot(coefficients, constants,
 //                new double[]{0,0,0}, 1000, 0.0001);
 
-        double[] solution = jacobIterationMethod.computeRoots(coefficients, constants,
-                new double[]{0,0,0,0}, 1000, 0.0001);
+//        double[] solution = jacobIterationMethod.computeRoots(coefficients, constants,
+//                new double[]{0,0,0,0}, 1000, 0.0001);
+
+//        double[][] matrix = {
+//                {25, 1, 2},
+//                {1, 3, 0},
+//                {2, 0, -4}
+//        };
+//
+//        powerMethod.compute(matrix, 0.005);
+
+        CurveFitting curveFitting = new CurveFitting();
+        double[] xData = {2,4,6,8};
+        double[] yData = {25, 38, 56, 84};
+
+        double[] coefficients = curveFitting.fitCurve(xData, yData, CurveFitting.CurveType.EXPONENTIAL);
+
+        System.out.println("Fitted Coefficients:");
+        for (double coefficient : coefficients) {
+            System.out.println(coefficient);
+        }
+
+
     }
 
 
