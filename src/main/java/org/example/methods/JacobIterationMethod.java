@@ -1,7 +1,7 @@
 package org.example.methods;
 
 public class JacobIterationMethod {
-    public double[] computeRoots(double[][] coefficients, double[] constants, double[] initialGuess,
+    public static double[] computeRoots(double[][] coefficients, double[] constants, double[] initialGuess,
                                         int maxIterations, double precision) {
         int n = coefficients.length;
         double[] nextSolution = new double[n];
@@ -35,12 +35,25 @@ public class JacobIterationMethod {
         return initialGuess;
     }
 
-    private boolean isConverged(double[] x1, double[] x2, double tolerance) {
+    private static boolean isConverged(double[] x1, double[] x2, double tolerance) {
         for (int i = 0; i < x1.length; i++) {
             if (Math.abs(x1[i] - x2[i]) >= tolerance) {
                 return false;
             }
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+                double[][] coefficients = {
+                {10, -2, -1, -1},
+                {-2, 10, -1, -1},
+                {-1, -1, 10, -2},
+                {-1, -1, -2, 10}
+        };
+        double[] constants = {3, 15, 27, -9};
+
+        double[] solution = computeRoots(coefficients, constants,
+                new double[]{0,0,0,0}, 1000, 0.0001);
     }
 }

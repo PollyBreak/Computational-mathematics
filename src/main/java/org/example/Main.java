@@ -79,16 +79,16 @@ public class Main {
 //
 //        powerMethod.compute(matrix, 0.005);
 
-        CurveFitting curveFitting = new CurveFitting();
-        double[] xData = {2,4,6,8};
-        double[] yData = {25, 38, 56, 84};
-
-        double[] coefficients = curveFitting.fitCurve(xData, yData, CurveFitting.CurveType.EXPONENTIAL);
-
-        System.out.println("Fitted Coefficients:");
-        for (double coefficient : coefficients) {
-            System.out.println(coefficient);
-        }
+//        CurveFitting curveFitting = new CurveFitting();
+//        double[] xData = {2,4,6,8};
+//        double[] yData = {25, 38, 56, 84};
+//
+//        double[] coefficients = curveFitting.fitCurve(xData, yData, CurveFitting.CurveType.EXPONENTIAL);
+//
+//        System.out.println("Fitted Coefficients:");
+//        for (double coefficient : coefficients) {
+//            System.out.println(coefficient);
+//        }
 
 
     }

@@ -1,7 +1,7 @@
 package org.example.methods;
 
 public class GaussSeidelMethod {
-    public double[] computeRoot(double[][] coefficients, double[] constants, double[] initialGuess,
+    public static  double[] computeRoot(double[][] coefficients, double[] constants, double[] initialGuess,
                               int maxIterations, double precision) {
         int n = coefficients.length;
         double[] solution = new double[n];
@@ -39,5 +39,18 @@ public class GaussSeidelMethod {
             sum += Math.pow(vector1[i] - vector2[i], 2);
         }
         return Math.sqrt(sum);
+    }
+
+    public static void main(String[] args) {
+                double[][] coefficients = {
+                {10, -2, -1, -1},
+                {-2, 10, -1, -1},
+                {-1, -1, 10, -2},
+                {-1, -1, -2, 10}
+        };
+        double[] constants = {3, 15, 27, -9};
+
+        double[] solution = computeRoot(coefficients, constants,
+                new double[]{0,0,0}, 1000, 0.0001);
     }
 }

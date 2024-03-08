@@ -119,4 +119,16 @@ public class CurveFitting {
         RealVector optimum = optimizer.optimize(builder.build()).getPoint();
         return optimum.toArray();
     }
+
+    public static void main(String[] args) {
+        double[] xData = {2,4,6,8};
+        double[] yData = {25, 38, 56, 84};
+
+        double[] coefficients = fitCurve(xData, yData, CurveFitting.CurveType.EXPONENTIAL);
+
+        System.out.println("Fitted Coefficients:");
+        for (double coefficient : coefficients) {
+            System.out.println(coefficient);
+        }
+    }
 }

@@ -54,4 +54,14 @@ public class PowerMethod {
         }
         return val;
     }
+
+    public static void main(String[] args) {
+                double[][] matrix = {
+                {25, 1, 2},
+                {1, 3, 0},
+                {2, 0, -4}
+        };
+
+        compute(matrix, 0.005);
+    }
 }
